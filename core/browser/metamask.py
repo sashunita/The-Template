@@ -256,7 +256,7 @@ class Metamask:
 
         chain_button.click()
         random_sleep(1, 3)
-        enabled_networks = self.ads.page.locator('div[data-rbd-droppable-id="characters"]')
+        enabled_networks = self.ads.page.locator("section[role='dialog'][aria-modal='true']")
         if enabled_networks.get_by_text(chain.metamask_name, exact=True).count():
             enabled_networks.get_by_text(chain.metamask_name, exact=True).click()
         else:
